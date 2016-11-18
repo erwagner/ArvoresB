@@ -16,7 +16,8 @@ public class ArvoresB {
         insereIterativo(30);
         insereIterativo(57);
         
-        exibe(raiz);
+       // exibe(raiz);
+        exibeFolhas(raiz);
         
         
     }
@@ -58,4 +59,15 @@ public class ArvoresB {
             exibe(temp.dir);
         }
     }
+        public static void exibeFolhas(NoA temp){
+        if(temp != null){
+            exibeFolhas(temp.esq);
+            
+            if((temp.esq==null) && (temp.dir==null))
+                System.out.println("["+temp.valor+"]");
+            
+            exibeFolhas(temp.dir);
+        }
+    }
+
 }
